@@ -1,0 +1,76 @@
+Arguments: 
+  D:\Program Files\NodeJS\node.exe D:\Program Files\NodeJS\node_modules\yarn\bin\yarn.js add @types/fastify
+
+PATH: 
+  C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;D:\VMware\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;D:\Git\cmd;D:\nvm;D:\Program Files\NodeJS;D:\Program Files\Java\bin;D:\Program Files\Java\jre\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\minikube;C:\Users\lihao\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\lihao\.dotnet\tools;D:\IntelliJ IDEA 2022.3\bin;;D:\PyCharm 2022.3\bin;;D:\nvm;D:\Program Files\NodeJS
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.2.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2ffastify: Not found
+      at params.callback [as _callback] (D:\nvm\v19.2.0\node_modules\yarn\lib\cli.js:66145:18)
+      at self.callback (D:\nvm\v19.2.0\node_modules\yarn\lib\cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (D:\nvm\v19.2.0\node_modules\yarn\lib\cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (D:\nvm\v19.2.0\node_modules\yarn\lib\cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "node-ts-template",
+    "version": "1.0.0",
+    "description": "Basic template of a node + typescript project",
+    "main": "dist/index.js",
+    "scripts": {
+      "build": "rmdir /s /q dist && tsc",
+      "watch": "rmdir dist && tsc --watch",
+      "start": "node --async-stack-traces dist/index.js",
+      "lint": "eslint --fix src",
+      "test": "SET NODE_ENV=test&&mocha --recursive dist/specs --exit --async-stack-traces",
+      "typeorm": "typeorm-ts-node-commonjs",
+      "all": "npm run lint && npm run build && npm run start && npm run test"
+    },
+    "author": "Thomas VEILLARD",
+    "license": "ISC",
+    "devDependencies": {
+      "@types/chai": "^4.3.4",
+      "@types/chai-as-promised": "^7.1.5",
+      "@types/mocha": "^10.0.1",
+      "@types/node": "^15.14.9",
+      "@typescript-eslint/eslint-plugin": "^5.3.0",
+      "@typescript-eslint/parser": "^5.3.0",
+      "chai": "^4.3.7",
+      "chai-as-promised": "^7.1.1",
+      "eslint": "^8.2.0",
+      "mocha": "^10.1.0",
+      "typescript": "^4.3.2"
+    },
+    "dependencies": {
+      "@faker-js/faker": "^7.6.0",
+      "@types/bcrypt": "^5.0.0",
+      "bcrypt": "^5.1.0",
+      "class-validator": "^0.14.0",
+      "fastify": "^4.11.0",
+      "json-schema-to-typescript": "^11.0.2",
+      "pg": "^8.8.0",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "^0.3.11"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
