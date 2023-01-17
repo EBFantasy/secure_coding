@@ -1,13 +1,13 @@
 import { FastifyInstance, FastifyPluginOptions } from "fastify"
 
 import { AppDataSource } from '../lib/typeorm'
-import { User } from '../entities/user'
+import { User } from '../entity/User'
 
-import { CreateUserRequestBody as CreateUserRequestBodyInterface } from '../../types/createUserRequestBody.schema'
-import { CreateUserResponseBody as CreateUserResponseBodyInterface } from '../../types/createUserResponseBody.schema'
+import { CreateUserRequestBody as CreateUserRequestBodyInterface } from '../../types/CreateUserRequestBody'
+import { CreateUserResponseBody as CreateUserResponseBodyInterface } from '../../types/createUserResponseBody'
 
-import CreateUserRequestBody from '../schemas/createUserRequestBody.schema.json'
-import CreateUserResponseBody from '../schemas/createUserResponseBody.schema.json'
+import CreateUserRequestBody from '../schemas/CreateUserRequestBody.json'
+import CreateUserResponseBody from '../schemas/CreateUserResponseBody.json'
 
 export default function registerUserRoute(server: FastifyInstance, opts: FastifyPluginOptions, done: (err?: Error) => void) {
   const userRepository = AppDataSource.getRepository(User)
@@ -26,8 +26,8 @@ export default function registerUserRoute(server: FastifyInstance, opts: Fastify
     const { firstname, lastname, email, password, passwordConfirmation } = request.body
 
     const newUser = new User()
-    newUser.firstname = firstname
-    newUser.lastname = lastname
+    newUser.firstName = firstname
+    newUser.lastName = lastname
     newUser.email = email
 
     await newUser.setPassword(password, passwordConfirmation)

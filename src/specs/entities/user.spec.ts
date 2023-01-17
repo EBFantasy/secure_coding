@@ -7,7 +7,7 @@ import SetPasswordDTO from "../../entity/setPasswordDTO";
 import { expect } from 'chai'
 import { generateUser } from '../../lib/utils'
 
-chai.use(chaiAsPromised)
+/*chai.use(chaiAsPromised)*/
 
 describe('User', function () {
   before(async function () {

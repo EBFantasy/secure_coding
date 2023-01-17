@@ -46,3 +46,26 @@ These conventions help to make the API more readable and understandable, and als
 
 - The POST /web-api/users endpoint may be used to create a new user.
 - The POST /web-api/sessions endpoint may be used to create a new session.
+
+
+
+## SE 2 | 3.3 Project
+
+**Question 4**: how behaves `fastify`:
+
+- if no json schema is provided for any of `body`, `query` and `params` ?
+
+Fastify will reject the request by default
+
+
+
+- if the client submits an unknown property, according to the JSON schema?
+
+According checking the JSON schema, Fastify will reject the request by default
+
+
+
+- if the client omits a required property, according to the JSON schema?
+
+According checking the JSON schema, Fastify will reject the request by default
+
